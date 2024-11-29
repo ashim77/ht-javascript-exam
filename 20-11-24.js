@@ -166,3 +166,21 @@ function countCharacter(str, char) {
 }
 // console.log(countCharacter("hello", "l"));
 // Example: countCharacter("hello", "l") should return 2
+
+
+// Write a function that removes duplicate characters from a string
+function removeDuplicates(str) {
+    // Hint: Use a Set or track characters you've seen
+    return [...new Set(str)].join("");
+}
+// console.log(removeDuplicates("Hello"));
+// Example: removeDuplicates("hello") should return "helo"
+
+// Create a function that replaces all occurrences of a word
+function replaceAllWords(str, oldWord, newWord) {
+    // Hint: Use replace() with a global flag
+    return str.split(oldWord).join(newWord);
+}
+console.log(replaceAllWords("hello hello world", "hello", "hi"));
+// Example: replaceAllWords("hello hello world", "hello", "hi") 
+// should return "hi hi world"
