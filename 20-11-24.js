@@ -181,6 +181,134 @@ function replaceAllWords(str, oldWord, newWord) {
     // Hint: Use replace() with a global flag
     return str.split(oldWord).join(newWord);
 }
-console.log(replaceAllWords("hello hello world", "hello", "hi"));
+// console.log(replaceAllWords("hello hello world", "hello", "hi"));
 // Example: replaceAllWords("hello hello world", "hello", "hi") 
 // should return "hi hi world"
+
+// Write a function that counts the number of words in a string
+function countWords(str) {
+    // Hint: Consider using split() method
+    // return str.split(" ").length;
+    return str.trim().split(/\s+/).length;
+}
+
+// console.log(countWords("Hello world programming"));
+// Example: countWords("Hello world programming") should return 3
+
+// Create a function that counts the number of vowels in a string
+function countVowels(str) {
+    // Hint: Check each character against vowels
+    const vowels = ['a','e','i','o','u'];
+    let count = 0;
+    for(let char of str.toLowerCase()){
+        if(vowels.includes(char)){
+            count++;
+        }
+    }
+    return count;
+}
+// console.log(countVowels("hello"));
+// Example: countVowels("hello") should return 2
+
+
+// Create a function that counts the number of vowels in a string
+function countVowels(str) {
+    // Hint: Check each character against vowels
+    const vowels = ['a','e','i','o','u'];
+    let count = 0;
+    for(char of str.toLowerCase()){
+        if(vowels.includes(char)){
+            count++;
+        }
+    }
+    return count;
+}
+// console.log(countVowels("hello"));
+// Example: countVowels("hello") should return 2
+
+
+
+// Write a function that converts a string to title case
+function toTitleCase(str) {
+    // Hint: Capitalize first letter of each word
+    // return str.trim().split(/\s+/).filter(word => word !== '').join(" ");
+    return str.trim()
+            .split(/\s+/)
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+            .join(" ");
+}
+// console.log(toTitleCase("hello world"));
+// Example: toTitleCase("hello world") should return "Hello World"
+
+
+// Write a function that converts a string to title case
+function toTitleCase(str) {
+    // Hint: Capitalize first letter of each word
+    return str.trim()
+            .split(/\s+/)
+            .map(word => word[0].toUpperCase() + word.slice(1).toLowerCase())
+            .join(" ");
+}
+// console.log(toTitleCase("hello world"));
+// Example: toTitleCase("hello world") should return "Hello World"
+
+
+
+// Create a function that reverses the order of words in a sentence
+function reverseSentence(str) {
+    // Hint: Split words, reverse their order, then join
+    return str.trim().split(/\s+/).reverse().join(" ");
+}
+// console.log(reverseSentence("Hello world"));
+// Example: reverseSentence("Hello world") should return "world Hello"
+
+
+// Write a function that truncates a string to a specified length
+function truncateString(str, maxLength) {
+    // Hint: If string is longer than maxLength, add ellipsis
+    // let strLen = str.length;
+    if( str.length > maxLength ){
+        return str.slice(0, maxLength) + '....';
+    } else{
+        return str;
+    }
+}
+// console.log(truncateString("Hello world", 5));
+// Example: truncateString("Hello world", 5) should return "Hello..."
+
+
+// Create a function that repeats a character a given number of times
+function repeatCharacter(char, times) {
+    // Hint: Use a loop or a string method
+    let result = "";
+    for( let i = 0; i < times; i++ ){
+        result += char;
+    }
+    return result;
+}
+// console.log(repeatCharacter('*', 5));
+// Example: repeatCharacter('*', 5) should return "*****"
+
+
+// Create a function that repeats a character a given number of times
+function repeatCharacter(char, times) {
+    // Hint: Use a loop or a string method
+    let result = "";
+    for(let i = 0; i < times; i++ ){
+        result += char;
+    }
+    return result;
+}
+// console.log(repeatCharacter('2', 5));
+// Example: repeatCharacter('*', 5) should return "*****"
+
+
+
+// Write a function that checks if a string is a palindrome
+function isPalindrome(str) {
+    // Hint: Compare string with its reverse
+    let palindroneValue = str.split("").reverse().join("");
+    return palindroneValue == str;
+}
+console.log(isPalindrome("racecar"));
+// Example: isPalindrome("racecar") should return true
