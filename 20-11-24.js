@@ -310,5 +310,44 @@ function isPalindrome(str) {
     let palindroneValue = str.split("").reverse().join("");
     return palindroneValue == str;
 }
-console.log(isPalindrome("racecar"));
+// console.log(isPalindrome("racecar"));
 // Example: isPalindrome("racecar") should return true
+
+
+// Create a function that counts occurrences of a specific character
+function countCharacter(str, char) {
+    // Hint: Loop through string or use split()
+    return str.trim().split("").filter(word => word === char).length;
+}
+// console.log(countCharacter("hello", "l"));
+// Example: countCharacter("hello", "l") should return 2
+
+// Write a function that removes duplicate characters from a string
+function removeDuplicates(str) {
+    // Hint: Use a Set or track characters you've seen
+    return [...new Set(str)].join("");
+}
+// console.log(removeDuplicates("hello"));
+// Example: removeDuplicates("hello") should return "helo"
+
+
+
+// Create a function that replaces all occurrences of a word
+function replaceAllWords(str, oldWord, newWord) {
+    // Hint: Use replace() with a global flag
+    return str.trim().split(" ").map(word => word.replace(oldWord, newWord)).join(" ");
+}
+// console.log(replaceAllWords("hello hello world", "hello", "hi"));
+// Example: replaceAllWords("hello hello world", "hello", "hi") 
+// should return "hi hi world"
+
+
+
+// Write a function that converts a string to camelCase
+function toCamelCase(str) {
+    // Hint: Split words, capitalize first letter of each word except the first
+    return str.trim().split(" ").filter(word => word);
+}
+console.log(toCamelCase("hello world programming"));
+// Example: toCamelCase("hello world programming") 
+// should return "helloWorldProgramming"
